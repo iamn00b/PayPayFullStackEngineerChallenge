@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "workspaces": [
+    "@paypay-chellenge/server",
+    "@paypay-chellenge/client"
+  ]
+}
