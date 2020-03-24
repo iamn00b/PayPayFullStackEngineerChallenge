@@ -31,3 +31,37 @@
 ### Design
 
 - [x] Database design
+
+### Development Environment
+
+- [ ] Express
+- [ ] Typescript
+- [ ] PostgreSQL
+- [ ] Sequelize
+  - [ ] Database migration
+
+### Database
+
+- [ ] Users Table
+- [ ] PerformanceReviews Table
+- [ ] Assignments Table
+
+### API
+
+- [ ] GET /api/user
+- [ ] PATCH /api/user/:id
+- [ ] DELETE /api/user/:id
+- [ ] POST /api/user/:id
+
+- [ ] GET /api/performance-review
+- [ ] PATCH /api/performance-review/:id
+- [ ] DELETE /api/performance-review/:id
+- [ ] POST /api/performance-review
+
+- [ ] GET /api/assignments
+- [ ] PATCH /api/assignments/:id
+- [ ] DELETE /api/assignments/:id
+- [ ] POST /api/assignments
+
+- [ ] POST /api/login
+- [ ] POST /api/logout
