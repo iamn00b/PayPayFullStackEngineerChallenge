@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import User from './User';
 
 //
 // -- API Router
@@ -15,9 +16,10 @@ export function createUserRouter() {
       res.json(null);
     })
 
-    // -- DELETE
+    // -- READ
     .get((_, res) => {
-      res.json(null);
+      User.findAll().then(users => res.json({ users }));
+      // res.json(null);
     })
 
     // -- UPDATE
