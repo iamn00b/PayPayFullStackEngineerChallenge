@@ -1,8 +1,9 @@
 import express from 'express';
+import { createUserRouter } from './User/userRouter';
 
 const app = express();
 const port = process.env.PORT || 8000;
 
-app.get('/api', (_req, res) => res.json({ data: 'Hello World!' }));
+app.use('/api', createUserRouter());
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+app.listen(port, () => console.log(`Listening on port ${port}!`));
