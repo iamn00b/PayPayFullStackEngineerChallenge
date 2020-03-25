@@ -34,8 +34,8 @@
 
 ### Development Environment
 
-- [ ] Express
-- [ ] Typescript
+- [x] Express
+- [x] Typescript
 - [ ] PostgreSQL
 - [ ] Sequelize
   - [ ] Database migration
