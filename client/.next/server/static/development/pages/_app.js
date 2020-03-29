@@ -118,11 +118,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var semantic_ui_css_semantic_min_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! semantic-ui-css/semantic.min.css */ "./node_modules/semantic-ui-css/semantic.min.css");
 /* harmony import */ var semantic_ui_css_semantic_min_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(semantic_ui_css_semantic_min_css__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _src_shared_styles_app_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../src/shared-styles/app.css */ "./src/shared-styles/app.css");
+/* harmony import */ var _src_shared_styles_app_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_src_shared_styles_app_css__WEBPACK_IMPORTED_MODULE_2__);
 var _jsxFileName = "/Users/thirafi.dide/Project/paypay-test/client/pages/_app.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
 
 
 function PayPayPerformanceReviewSystemApp({
@@ -133,11 +136,22 @@ function PayPayPerformanceReviewSystemApp({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 7,
+      lineNumber: 8,
       columnNumber: 10
     }
   }));
 }
+
+/***/ }),
+
+/***/ "./src/shared-styles/app.css":
+/*!***********************************!*\
+  !*** ./src/shared-styles/app.css ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
 
 /***/ }),
 

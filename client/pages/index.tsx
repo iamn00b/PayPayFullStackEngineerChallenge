@@ -1,7 +1,7 @@
-import { Header } from 'semantic-ui-react';
+import HomePage from '../src/home-page/HomePage';
 
-function HomePage() {
-  return <Header as="h1">Hello World!</Header>;
+function HomeAppPage() {
+  return <HomePage />;
 }
 
-export default HomePage;
+export default HomeAppPage;
