@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 import cx from 'classnames';
+import Link from 'next/link';
 import { Container, Menu, Segment } from 'semantic-ui-react';
 
 import styles from './Page.module.css';
@@ -18,8 +19,12 @@ function Page(props: PageProps) {
         <Segment className={styles.menu}>
           <Container>
             <Menu secondary>
-              <Menu.Item name="Home" active />
-              <Menu.Item name="Performance Reviews" />
+              <Link href="/">
+                <Menu.Item name="Home" active />
+              </Link>
+              <Link href="/performance-reviews">
+                <Menu.Item name="Performance Reviews" />
+              </Link>
               <Menu.Item name="Assignments" />
 
               <Menu.Menu position="right">
