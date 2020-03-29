@@ -1,5 +1,5 @@
 import { Router, Request, Response } from 'express';
-import User from './User';
+import User from '../User';
 
 //
 // -- API Router

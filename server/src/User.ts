@@ -1,5 +1,5 @@
 import { Model, DataTypes } from 'sequelize';
-import sequelize from '../App/Sequelize';
+import sequelize from './App/Sequelize';
 
 class User extends Model {
   public id!: number;
@@ -21,7 +21,7 @@ User.init(
       allowNull: false,
     },
   },
-  { sequelize, modelName: 'user' }
+  { sequelize, modelName: 'user', underscored: true }
 );
 
 export default User;
