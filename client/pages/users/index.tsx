@@ -1,4 +1,4 @@
-import UsersPage from '../src/users-page/UsersPage';
+import UsersPage from '../../src/users-page/UsersPage';
 
 function UsersAppPage() {
   return <UsersPage />;
