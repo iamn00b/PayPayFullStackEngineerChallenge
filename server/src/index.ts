@@ -8,7 +8,6 @@ const app = express();
 const port = process.env.PORT || 8000;
 
 sequelize.sync({ force: true });
-// PerformanceReview.sync({ force: true });
 
 app.use(cors());
 app.use(bodyParser.json());

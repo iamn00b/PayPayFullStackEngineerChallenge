@@ -5,7 +5,7 @@ class User extends Model {
   public id!: number;
   public name!: string;
   public email!: string;
-  public role!: string;
+  public role!: 'EMPLOYEE' | 'ADMIN';
   public title!: string;
 
   public readonly createdAt!: Date;

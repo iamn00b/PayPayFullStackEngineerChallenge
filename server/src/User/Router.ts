@@ -38,14 +38,16 @@ export function createUserRouter() {
 // -- CREATE
 
 interface CreateUserRequestBody {
-  name: string;
-  email: string;
+  name: User['name'];
+  email: User['email'];
+  role: User['role'];
+  title: User['title'];
 }
 
 function handleCreateUserRequest(req: Request, res: Response) {
-  const { name, email } = <CreateUserRequestBody>req.body;
+  const { name, email, role, title } = <CreateUserRequestBody>req.body;
 
-  if (!name || !email) {
+  if (!name || !email || !role || !title) {
     res.status(422).json({ message: 'Invalid JSON shape' });
   }
 
@@ -71,15 +73,17 @@ function handleReadAllUserRequest(_req: Request, res: Response) {
 // -- UPDATE
 
 interface UpdateUserRequestBody {
-  name?: string;
-  email?: string;
+  name?: User['name'];
+  email?: User['email'];
+  role?: User['role'];
+  title?: User['title'];
 }
 
 function handleUpdateUserRequest(req: Request, res: Response) {
   const id = req.params.id as string;
-  const { name, email } = <UpdateUserRequestBody>req.body;
+  const { name, email, role, title } = <UpdateUserRequestBody>req.body;
 
-  if (!name && !email) {
+  if (!name && !email && !role && !title) {
     res.status(422).json({ message: 'Invalid JSON shape' });
   }
 

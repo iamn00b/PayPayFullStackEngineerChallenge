@@ -1,7 +1,8 @@
 import axios from 'axios';
+import { UserModel } from '../../app-models/UserModel';
 
 type GetUserListResponse = {
-  users: any;
+  users: UserModel[];
 };
 
 export function getUserList() {
