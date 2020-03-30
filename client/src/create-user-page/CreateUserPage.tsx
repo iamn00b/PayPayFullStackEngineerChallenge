@@ -1,14 +1,18 @@
 import { Header } from 'semantic-ui-react';
+import { Provider } from 'react-redux';
 import Page from '../shared-ui/Page/Page';
-import CreateUserForm from './components/CreateUserForm/CreateUserForm';
+import { StoreCreateUserPageState } from './states/CreateUserPageState';
+import CreateUserFormContainer from './containers/CreateUserFormContainer';
 
 function CreatUserPage() {
   return (
-    <Page>
-      <Header as="h2">Create new user</Header>
+    <Provider store={StoreCreateUserPageState}>
+      <Page>
+        <Header as="h2">Create new user</Header>
 
-      <CreateUserForm />
-    </Page>
+        <CreateUserFormContainer />
+      </Page>
+    </Provider>
   );
 }
 
