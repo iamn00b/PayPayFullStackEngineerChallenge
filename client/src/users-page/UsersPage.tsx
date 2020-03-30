@@ -1,6 +1,6 @@
 import Page from '../shared-ui/Page/Page';
 import { Header, Button } from 'semantic-ui-react';
-import UserList from './components/UserList/UserList';
+import UserListContainer from './containers/UserListContainer';
 
 function UsersPage() {
   return (
@@ -8,7 +8,7 @@ function UsersPage() {
       <Header as="h2">Users</Header>
 
       <Button>Create User</Button>
-      <UserList />
+      <UserListContainer />
     </Page>
   );
 }
