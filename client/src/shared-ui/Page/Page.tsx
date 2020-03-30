@@ -25,6 +25,12 @@ function Page(props: PageProps) {
               <Link href="/">
                 <Menu.Item name="Home" active={currentActivePage === ''} />
               </Link>
+              <Link href="/users">
+                <Menu.Item
+                  name="Users"
+                  active={currentActivePage === 'users'}
+                />
+              </Link>
               <Link href="/performance-reviews">
                 <Menu.Item
                   name="Performance Reviews"
