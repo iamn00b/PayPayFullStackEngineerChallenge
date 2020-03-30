@@ -10,6 +10,7 @@ type CreateUserFormProps = {
   onChangeEmail(email: string): void;
   onChangeRole(role: 'EMPLOYEE' | 'ADMIN'): void;
   onChangeTitle(title: string): void;
+  onSubmit(): void;
 };
 
 function CreateUserForm(props: CreateUserFormProps) {
@@ -22,6 +23,7 @@ function CreateUserForm(props: CreateUserFormProps) {
     onChangeEmail,
     onChangeRole,
     onChangeTitle,
+    onSubmit,
   } = props;
 
   return (
@@ -55,7 +57,7 @@ function CreateUserForm(props: CreateUserFormProps) {
           <Input value={title} onChange={e => onChangeTitle(e.target.value)} />
         </Form.Field>
 
-        <Button type="submit" positive>
+        <Button type="submit" positive onClick={onSubmit}>
           Submit
         </Button>
       </Form>

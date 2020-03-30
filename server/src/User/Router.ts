@@ -51,7 +51,7 @@ function handleCreateUserRequest(req: Request, res: Response) {
     res.status(422).json({ message: 'Invalid JSON shape' });
   }
 
-  User.create({ name, email }).then(user => {
+  User.create({ name, email, role, title }).then(user => {
     res.json({ user });
   });
 }
@@ -87,7 +87,7 @@ function handleUpdateUserRequest(req: Request, res: Response) {
     res.status(422).json({ message: 'Invalid JSON shape' });
   }
 
-  User.update({ name, email }, { where: { id } }).then(user => {
+  User.update({ name, email, role, title }, { where: { id } }).then(user => {
     res.json({ user });
   });
 }
