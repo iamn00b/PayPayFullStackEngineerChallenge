@@ -1,4 +1,5 @@
 import { Table, Button, Icon } from 'semantic-ui-react';
+import Link from 'next/link';
 
 function AssignmentList() {
   return (
@@ -17,7 +18,9 @@ function AssignmentList() {
             <Icon name="warning" /> Needs Review
           </Table.Cell>
           <Table.Cell collapsing>
-            <Button positive>Submit Review</Button>
+            <Link href="/performance-reviews/submit">
+              <Button positive>Submit Review</Button>
+            </Link>
           </Table.Cell>
         </Table.Row>
         <Table.Row positive>

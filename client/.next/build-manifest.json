@@ -20,11 +20,11 @@
       "static/runtime/polyfills.js",
       "static/runtime/polyfills.js.map"
     ],
-    "/assignments": [
+    "/performance-reviews": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/performance-reviews": [
+    "/performance-reviews/submit": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]

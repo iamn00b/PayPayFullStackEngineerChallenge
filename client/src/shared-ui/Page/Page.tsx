@@ -25,7 +25,9 @@ function Page(props: PageProps) {
               <Link href="/performance-reviews">
                 <Menu.Item name="Performance Reviews" />
               </Link>
-              <Menu.Item name="Assignments" />
+              <Link href="/assignments">
+                <Menu.Item name="Assignments" />
+              </Link>
 
               <Menu.Menu position="right">
                 <Menu.Item name="logout" />

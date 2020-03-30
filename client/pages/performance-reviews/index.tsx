@@ -1,4 +1,4 @@
-import PerformanceReviewsPage from '../src/performance-reviews-page/PerformanceReviewsPage';
+import PerformanceReviewsPage from '../../src/performance-reviews-page/PerformanceReviewsPage';
 
 function PerformanceReviewsAppPage() {
   return <PerformanceReviewsPage />;

@@ -12,7 +12,7 @@ function PerformanceReviewList() {
       <Table.Body>
         <Table.Row>
           <Table.Cell collapsing>
-            <Rating icon="star" defaultRating={4} maxRating={5} />
+            <Rating icon="star" rating={4} maxRating={5} disabled />
           </Table.Cell>
           <Table.Cell>Lorem Ipsum Dolor Sit Amet</Table.Cell>
         </Table.Row>
