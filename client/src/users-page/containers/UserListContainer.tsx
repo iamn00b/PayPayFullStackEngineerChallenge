@@ -12,7 +12,7 @@ function UserListContainer() {
 
   const dispatch = useUserListPageStateDispatch();
 
-  useEffect(() => {
+  const fetchUserList = () => {
     dispatch({ type: 'FETCH_LIST' });
 
     getUserList()
@@ -20,9 +20,20 @@ function UserListContainer() {
       .catch(error =>
         dispatch({ type: 'FAILED_FETCH_LIST', message: error.message })
       );
+  };
+
+  useEffect(() => {
+    fetchUserList();
   }, []);
 
-  return <UserList loading={pageState === 'LOADING'} users={users || []} />;
+  return (
+    <UserList
+      loading={pageState === 'LOADING'}
+      failedFetch={pageState === 'FAILED_FETCH_LIST'}
+      users={users || []}
+      onReload={fetchUserList}
+    />
+  );
 }
 
 export default UserListContainer;

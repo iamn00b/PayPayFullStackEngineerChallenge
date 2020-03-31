@@ -1,30 +1,65 @@
-import { Table, Button, Popup } from 'semantic-ui-react';
+import {
+  Table,
+  Button,
+  Popup,
+  Segment,
+  Header,
+  Icon,
+  Placeholder,
+} from 'semantic-ui-react';
 import Link from 'next/link';
 import { UserModel } from '../../../app-models/UserModel';
 
 type UserListProps = {
   loading?: boolean;
+  failedFetch?: boolean;
   users: UserModel[];
+  onReload(): void;
 };
 
 function UserList(props: UserListProps) {
-  const { loading, users } = props;
+  const { loading, users, failedFetch, onReload } = props;
 
-  if (loading) {
-    // TODO Loading state
-    return null;
+  const createUserButton = (
+    <Link href="/users/create">
+      <Button primary>Create User</Button>
+    </Link>
+  );
+
+  if (failedFetch) {
+    return (
+      <Segment placeholder>
+        <Header icon>
+          <Icon name="cogs" />
+          Failed to fetch user list
+        </Header>
+        <Button primary onClick={onReload}>
+          Reload
+        </Button>
+      </Segment>
+    );
+  }
+
+  if (!loading && users.length <= 0) {
+    return (
+      <Segment placeholder>
+        <Header icon>
+          <Icon name="user x" />
+          No user currently registered
+        </Header>
+        {createUserButton}
+      </Segment>
+    );
   }
 
   return (
     <>
-      <Link href="/users/create">
-        <Button>Create User</Button>
-      </Link>
+      <Link href="/users/create">{createUserButton}</Link>
 
       <Table>
         <Table.Header>
           <Table.Row>
-            <Table.HeaderCell>User ID</Table.HeaderCell>
+            <Table.HeaderCell collapsing>User ID</Table.HeaderCell>
             <Table.HeaderCell>Name</Table.HeaderCell>
             <Table.HeaderCell>E-Mail</Table.HeaderCell>
             <Table.HeaderCell>Role</Table.HeaderCell>
@@ -33,27 +68,36 @@ function UserList(props: UserListProps) {
           </Table.Row>
         </Table.Header>
         <Table.Body>
-          {users.map(user => (
-            <Table.Row>
-              <Table.Cell>{user.id}</Table.Cell>
-              <Table.Cell>{user.name}</Table.Cell>
-              <Table.Cell>{user.email}</Table.Cell>
-              <Table.Cell>{user.role}</Table.Cell>
-              <Table.Cell>{user.title}</Table.Cell>
-              <Table.Cell collapsing>
-                <Popup
-                  content="Update user information"
-                  position="bottom right"
-                  trigger={<Button primary icon={{ name: 'write' }} />}
-                />
-                <Popup
-                  content="Delete user"
-                  position="bottom right"
-                  trigger={<Button negative icon={{ name: 'trash' }} />}
-                />
-              </Table.Cell>
-            </Table.Row>
-          ))}
+          {loading && (
+            <>
+              <LoadingRow />
+              <LoadingRow />
+              <LoadingRow />
+            </>
+          )}
+
+          {!loading &&
+            users.map(user => (
+              <Table.Row key={user.id}>
+                <Table.Cell>{user.id}</Table.Cell>
+                <Table.Cell>{user.name}</Table.Cell>
+                <Table.Cell>{user.email}</Table.Cell>
+                <Table.Cell>{user.role}</Table.Cell>
+                <Table.Cell>{user.title}</Table.Cell>
+                <Table.Cell collapsing>
+                  <Popup
+                    content="Update user information"
+                    position="bottom right"
+                    trigger={<Button primary icon={{ name: 'write' }} />}
+                  />
+                  <Popup
+                    content="Delete user"
+                    position="bottom right"
+                    trigger={<Button negative icon={{ name: 'trash' }} />}
+                  />
+                </Table.Cell>
+              </Table.Row>
+            ))}
         </Table.Body>
       </Table>
     </>
@@ -61,3 +105,40 @@ function UserList(props: UserListProps) {
 }
 
 export default UserList;
+
+function LoadingRow() {
+  return (
+    <Table.Row>
+      <Table.Cell>
+        <Placeholder>
+          <Placeholder.Line />
+        </Placeholder>
+      </Table.Cell>
+      <Table.Cell>
+        <Placeholder>
+          <Placeholder.Line />
+        </Placeholder>
+      </Table.Cell>
+      <Table.Cell>
+        <Placeholder>
+          <Placeholder.Line />
+        </Placeholder>
+      </Table.Cell>
+      <Table.Cell>
+        <Placeholder>
+          <Placeholder.Line />
+        </Placeholder>
+      </Table.Cell>
+      <Table.Cell>
+        <Placeholder>
+          <Placeholder.Line />
+        </Placeholder>
+      </Table.Cell>
+      <Table.Cell>
+        <Placeholder>
+          <Placeholder.Line />
+        </Placeholder>
+      </Table.Cell>
+    </Table.Row>
+  );
+}
