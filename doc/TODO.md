@@ -5,63 +5,38 @@
 ### User - Generic
 
 - [ ] Login
+  - [ ] **API:** POST /api/login
 - [ ] Logout
+  - [ ] **API:** GET /api/logout
 
 ### User - Employee
 
 - [ ] See list of performance review
-  - [ ] Hide the list until all user writes all performance review to assigned user
+  - [ ] **API:** GET /api/performance-review ({ userId })
+- [ ] Hide the list until all user writes all performance review to assigned user
+  - [ ] **API:** GET /api/assignemnts/:userId/unfinished-count
 - [ ] See list of assigned peer review
+  - [ ] **API:** GET /api/assignments ({ userId })
 - [ ] Submit performance review
+  - [ ] **API:** POST /api/performance-review ({ userId, assignmentId })
 
 ### User - Admin
 
-- [ ] See list of users
-- [ ] Add new user
-- [ ] Delete user
+- [x] See list of users
+  - [x] **API:** GET /api/user
+- [x] Add new user
+  - [x] **API:** POST /api/user
+- [x] Delete user
+  - [x] **API:** DELETE /api/user/:userId
 - [ ] Update user
+  - [x] **API:** PATCH /api/user/:userId
 - [ ] See list of performance reviews
+  - [ ] **API:** GET /api/performance-review
 - [ ] Delete performance reviews
+  - [ ] **API:** DELETE /api/performance-review/:perRevId
 - [ ] Update performance reviews
+  - [ ] **API:** PATCH /api/performance-review/:perRevId
 - [ ] See list of performance review assignment
+  - [ ] **API:** GET /api/assignemnts/
 - [ ] Add new performance review assignment
-
-## Server
-
-### Design
-
-- [x] Database design
-
-### Development Environment
-
-- [x] Express
-- [x] Typescript
-- [ ] PostgreSQL
-- [ ] Sequelize
-  - [ ] Database migration
-
-### Database
-
-- [ ] Users Table
-- [ ] PerformanceReviews Table
-- [ ] Assignments Table
-
-### API
-
-- [ ] GET /api/user
-- [ ] PATCH /api/user/:id
-- [ ] DELETE /api/user/:id
-- [ ] POST /api/user/:id
-
-- [ ] GET /api/performance-review
-- [ ] PATCH /api/performance-review/:id
-- [ ] DELETE /api/performance-review/:id
-- [ ] POST /api/performance-review
-
-- [ ] GET /api/assignments
-- [ ] PATCH /api/assignments/:id
-- [ ] DELETE /api/assignments/:id
-- [ ] POST /api/assignments
-
-- [ ] POST /api/login
-- [ ] POST /api/logout
+  - [ ] **API:** POST /api/assignemnts/
