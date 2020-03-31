@@ -1,7 +1,13 @@
 {
   "private": true,
   "workspaces": [
-    "@paypay-chellenge/server",
-    "@paypay-chellenge/client"
-  ]
+    "server",
+    "client"
+  ],
+  "scripts": {
+    "dev": "concurrently \"yarn workspace server dev\" \"yarn workspace client dev\""
+  },
+  "devDependencies": {
+    "concurrently": "^5.1.0"
+  }
 }

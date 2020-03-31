@@ -1,39 +1,38 @@
-# Full Stack Developer Challenge
-This is an interview challengs. Please feel free to fork. Pull Requests will be ignored.
+# PayPay Fullstack Challenge
 
-## Requirements
-Design a web application that allows employees to submit feedback toward each other's performance review.
+by Thirafi Dide (`jurnaldide@gmail.com`)
 
-*Partial solutions are acceptable.*  It is not necessary to submit a complete solution that implements every requirement.
+## Run
 
-### Admin view
-* Add/remove/update/view employees
-* Add/update/view performance reviews
-* Assign employees to participate in another employee's performance review
+This project use `yarn` for managing the monorepo.
 
-### Employee view
-* List of performance reviews requiring feedback
-* Submit feedback
+```bash
 
-## Challenge Scope
-* High level description of design and technologies used
-* Server side API (using a programming language and/or framework of your choice)
-  * Implementation of at least 3 API calls
-  * Most full stack web developers at PayPay currently use Java, Ruby on Rails, or Node.js on the server(with MySQL for the database), but feel free to use other tech if you prefer
-* Web app
-  * Implementation of 2-5 web pages using a modern web framework (e.g. React or Angular) that talks to server side
-    * This should integrate with your API, but it's fine to use static responses for some of it 
-* Document all assumptions made
-* Complete solutions aren't required, but what you do submit needs to run.
+# install dependencies
+yarn
 
-## How to complete this challenge
-* Fork this repo in github
-* Complete the design and code as defined to the best of your abilities
-* Place notes in your code to help with clarity where appropriate. Make it readable enough to present to the PayPay interview team
-* Complete your work in your own github repo and send the results to us and/or present them during your interview
+# run dev for server and client
+yarn dev
+```
 
-## What are we looking for? What does this prove?
-* Assumptions you make given limited requirements
-* Technology and design choices
-* Identify areas of your strengths
-* This is not a pass or fail test, this will serve as a common ground that we can deep dive together into specific issues
+Server by default would run at port `8000` and client will run at `3000`. You can also run the dev individually by using yarn workspace or running the script at their respective folders
+
+```bash
+
+#run server only
+yarn workspace server dev
+
+# or
+cd server
+yarn dev
+```
+
+## Assumptions
+
+- Use case breakdown can be seen at `/docs/TODO.md`
+- User can have role either as Employee or Admin. Admin role is treated as Employee with admin previlages
+- User submit performance review to other user/employee by submitting score (1-5) and written feedback
+
+## Project structure
+
+This repo are monorepo that contains client and server sources. Server files and folders structured based on Entities Driven Design
