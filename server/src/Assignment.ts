@@ -10,26 +10,14 @@ class Assignment extends Model {
   public readonly updatedAt!: Date;
 }
 
-Assignment.init(
-  {
-    score: {
-      type: new DataTypes.INTEGER(),
-      allowNull: false,
-    },
-    feedback: {
-      type: new DataTypes.STRING(),
-      allowNull: false,
-    },
-  },
-  { sequelize, modelName: 'performance_review', underscored: true }
-);
+Assignment.init({}, { sequelize, modelName: 'assignment', underscored: true });
 
 Assignment.belongsTo(User);
-Assignment.hasOne(User, {
+Assignment.belongsTo(User, {
   as: 'AssignedTo',
-  foreignKey: 'assign_to_user_id',
+  foreignKey: 'assignToUserId',
   constraints: false,
 });
-Assignment.hasOne(PerformanceReview);
+Assignment.belongsTo(PerformanceReview);
 
 export default Assignment;

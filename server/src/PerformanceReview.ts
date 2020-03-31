@@ -29,6 +29,6 @@ PerformanceReview.init(
 );
 
 PerformanceReview.belongsTo(User);
-PerformanceReview.belongsTo(User, { as: 'Writer', foreignKey: 'writer_id' });
+PerformanceReview.belongsTo(User, { as: 'Writer', foreignKey: 'writerId' });
 
 export default PerformanceReview;

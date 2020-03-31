@@ -37,6 +37,6 @@
 - [ ] Update performance reviews
   - [ ] **API:** PATCH /api/performance-review/:perRevId
 - [ ] See list of performance review assignment
-  - [ ] **API:** GET /api/assignment/
+  - [x] **API:** GET /api/assignment/
 - [ ] Add new performance review assignment
-  - [ ] **API:** POST /api/assignment/
+  - [x] **API:** POST /api/assignment/
