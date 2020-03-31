@@ -12,11 +12,11 @@
 ### User - Employee
 
 - [ ] See list of performance review
-  - [ ] **API:** GET /api/performance-review ({ userId })
+  - [ ] **API:** GET /api/user/:id/performance-review
 - [ ] Hide the list until all user writes all performance review to assigned user
-  - [ ] **API:** GET /api/assignemnts/:userId/unfinished-count
+  - [ ] **API:** GET /api/user/:userId/unfinished-assignments
 - [ ] See list of assigned peer review
-  - [ ] **API:** GET /api/assignments ({ userId })
+  - [ ] **API:** GET /api/user/:id/assignments
 - [ ] Submit performance review
   - [ ] **API:** POST /api/performance-review ({ userId, assignmentId })
 

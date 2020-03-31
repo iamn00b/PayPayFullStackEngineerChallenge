@@ -7,6 +7,9 @@ class PerformanceReview extends Model {
   public score!: number;
   public feedback!: string;
 
+  public userId!: string;
+  public writerId!: string;
+
   public readonly createdAt!: Date;
   public readonly updatedAt!: Date;
 }
