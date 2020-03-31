@@ -14,9 +14,9 @@
 - [ ] See list of performance review
   - [ ] **API:** GET /api/user/:id/performance-review
 - [ ] Hide the list until all user writes all performance review to assigned user
-  - [ ] **API:** GET /api/user/:userId/unfinished-assignments
+  - [ ] **API:** GET /api/user/:userId/unfinished-assignment
 - [ ] See list of assigned peer review
-  - [ ] **API:** GET /api/user/:id/assignments
+  - [ ] **API:** GET /api/user/:id/assignment
 - [ ] Submit performance review
   - [ ] **API:** POST /api/performance-review ({ userId, assignmentId })
 
@@ -37,6 +37,6 @@
 - [ ] Update performance reviews
   - [ ] **API:** PATCH /api/performance-review/:perRevId
 - [ ] See list of performance review assignment
-  - [ ] **API:** GET /api/assignemnts/
+  - [ ] **API:** GET /api/assignment/
 - [ ] Add new performance review assignment
-  - [ ] **API:** POST /api/assignemnts/
+  - [ ] **API:** POST /api/assignment/
