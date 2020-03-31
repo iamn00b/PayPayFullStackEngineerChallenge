@@ -1,6 +1,6 @@
 # PayPay Fullstack Challenge
 
-by Thirafi Dide (`jurnaldide@gmail.com`)
+by Thirafi Dide
 
 ## Run
 
