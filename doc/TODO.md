@@ -12,13 +12,13 @@
 ### User - Employee
 
 - [ ] See list of performance review
-  - [ ] **API:** GET /api/user/:id/performance-review
+  - [ ] **API:** GET /api/user/:userId/performance-review
 - [ ] Hide the list until all user writes all performance review to assigned user
   - [ ] **API:** GET /api/user/:userId/unfinished-assignment
 - [ ] See list of assigned peer review
-  - [ ] **API:** GET /api/user/:id/assignment
+  - [ ] **API:** GET /api/user/:userId/assignment
 - [ ] Submit performance review
-  - [ ] **API:** POST /api/performance-review ({ userId, assignmentId })
+  - [x] **API:** POST /api/performance-review ({ userId, assignmentId })
 
 ### User - Admin
 
@@ -31,11 +31,11 @@
 - [ ] Update user
   - [x] **API:** PATCH /api/user/:userId
 - [ ] See list of performance reviews
-  - [ ] **API:** GET /api/performance-review
+  - [x] **API:** GET /api/performance-review
 - [ ] Delete performance reviews
-  - [ ] **API:** DELETE /api/performance-review/:perRevId
+  - [x] **API:** DELETE /api/performance-review/:perRevId
 - [ ] Update performance reviews
-  - [ ] **API:** PATCH /api/performance-review/:perRevId
+  - [x] **API:** PATCH /api/performance-review/:perRevId
 - [ ] See list of performance review assignment
   - [x] **API:** GET /api/assignment/
 - [ ] Add new performance review assignment
