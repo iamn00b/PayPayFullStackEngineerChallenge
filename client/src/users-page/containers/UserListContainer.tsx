@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import UserList from '../components/UserList/UserList';
-import { getUserList } from '../../app-services/UserService';
+import { getUserList, deleteUser } from '../../app-services/UserService';
 import {
   useUserListPageStateSelector,
   useUserListPageStateDispatch,
@@ -22,6 +22,10 @@ function UserListContainer() {
       );
   };
 
+  const onDeleteUser = (id: string) => {
+    deleteUser(id).then(() => fetchUserList());
+  };
+
   useEffect(() => {
     fetchUserList();
   }, []);
@@ -32,6 +36,7 @@ function UserListContainer() {
       failedFetch={pageState === 'FAILED_FETCH_LIST'}
       users={users || []}
       onReload={fetchUserList}
+      onDelete={onDeleteUser}
     />
   );
 }

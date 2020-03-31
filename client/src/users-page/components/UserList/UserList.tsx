@@ -15,10 +15,11 @@ type UserListProps = {
   failedFetch?: boolean;
   users: UserModel[];
   onReload(): void;
+  onDelete(id: string): void;
 };
 
 function UserList(props: UserListProps) {
-  const { loading, users, failedFetch, onReload } = props;
+  const { loading, users, failedFetch, onReload, onDelete } = props;
 
   const createUserButton = (
     <Link href="/users/create">
@@ -93,7 +94,13 @@ function UserList(props: UserListProps) {
                   <Popup
                     content="Delete user"
                     position="bottom right"
-                    trigger={<Button negative icon={{ name: 'trash' }} />}
+                    trigger={
+                      <Button
+                        negative
+                        icon={{ name: 'trash' }}
+                        onClick={() => onDelete(user.id)}
+                      />
+                    }
                   />
                 </Table.Cell>
               </Table.Row>
